@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
-  get "up" => "rails/health#show", as: :rails_health_check
+  # get "up" => "rails/health#show", as: :rails_health_check
 
   # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
@@ -11,4 +11,18 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  #   get "/products", to: "products#index"
+
+  #   get "products/new", to: "products#new"
+  #   post "/products", to: "products#create"
+
+  #   get "/products/:id", to: "products#edit"
+  #   patch "/products/:id", to: "products#update"
+  #   put "/products/:id", to: "products#update"
+
+  #   delete "/products/:id", to: "products#destroy"
+
+  #   get "/blog/:title", to: "blog#show"
+  #   get "/blog/:slug", to: "blog#show"
+  resources :products
 end
